@@ -19,7 +19,7 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/leaderboard", (req,res,next) => {
-    var sql = "select * from leaderboard limit 10 order by score desc"
+    var sql = "select * from leaderboard order by score desc limit 10"
     var params = []
     db.all(sql, params, (err, rows) => {
         if (err) {
